@@ -6,25 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>memo</title>
     <script src="angular.min.js"></script>
+
 </head>
+
 <body>
     <div ng-app="myApp" ng-controller="myCtrl">
+      
     <p>
-        First Name: <input type="text" ng-model="employee.firstName"><br><br>
-        Last Name: <input type="text" ng-model="lastName"><br><br>
-        Gender:<input type="text" ng-model="gender"><br><br>
+        First Name: <input type="text" ng-model="firstName">
+        Last Name: <input type="text" ng-model="lastName">
+        Email:<input type="text" ng-model="email">
         </p>
         
-        </div>
+        
         
         <script>
         var app = angular.module('myApp', []);
         app.controller('myCtrl', function($scope) {
-          $scope.employee.firstName = "Koduri";
-          
+          $scope.firstName = "Koduri";
           $scope.lastName = "Gayathri";
-          $scope.gender = "Female";
+          $scope.email = "kodurigayathri333@gmail.com";
         });
         </script>
-</body>
+        
+      </div>
+    </body>
 </html>

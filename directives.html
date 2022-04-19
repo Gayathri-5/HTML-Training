@@ -56,7 +56,7 @@
     <button ng-disabled="mySwitch">Click Me!</button>
     </p>
     <p>
-    <input type="checkbox" ng-model="mySwitch"/>Button
+    <input type="checkbox" ng-modal="mySwitch"/>Button
     </p>
     <p>
     {{ mySwitch }}
@@ -98,9 +98,13 @@
         });  
         </script>
         <h1>mouseup</h1> 
-        <div ng-mouseup="u = cu + 1" ng-init="u=0">Click me!</div>
+        <div ng-mouseup="u = u + 1" ng-init="u=0">Click me!</div>
 
         <h1>{{u}}</h1>
+</body>
+</html>
+        
+      
 
         
         
@@ -113,5 +117,3 @@
               
       
 
-</body>
-</html>

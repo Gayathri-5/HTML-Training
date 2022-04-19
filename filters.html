@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filters</title>
+    <script src="angular.min.js"></script>
+</head>
+<body>
+    <style>p { border:2px solid pink;
+    padding-top: 10px;
+    padding: right 10px; 
+    padding-bottom: 10px;
+    padding-left:10px ;
+    background-color:aquamarine ;
+    text-align: center;
+    }
+    </style>
+    
+
+    <div ng-app="myApp" ng-controller="currencyCntrl">
+       <h1>Currency filter with currency
+                symbol and fraction size</h1>       
+	<p>Amount : {{ amount | currency : "Rs" : 2}}</p>
+    <h1>uppercase filter</h1>
+     <p> {{txt | uppercase}}</p>
+     <h1>lowercase filter</h1>
+    <p>{{txt | lowercase}}</p>
+    <h1>date filter</h1>
+    <p>{{ today | date : "dd.MM.y" }}</p>
+    <h1>number filter</h1>
+    <p>Number : {{ value| number  : 2}}</p>
+    <h1>filter</h1>
+      <p ng-repeat="x in names | filter : 'e'">
+                {{ x }}
+    </p>
+     </div>
+     <script>
+	var app = angular.module('myApp', []);
+	app.controller('currencyCntrl', function($scope) {
+	$scope.amount = 75;
+    $scope.txt = "Angularjs";
+    $scope.today = new Date();
+    $scope.value = 75598.548;
+    $scope.names = [
+                'Janu',
+                'swathi',
+                'esha',
+                'hegda',
+                'sweety',
+                'eshika'
+            ];
+    
+    });
+    </script>
+    </body>
+    </html>

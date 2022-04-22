@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+    <style>
+      
+    
+        input.ng-valid{
+          background-color:black;
+        }
+        input.ng-pristine{
+          background-color:aqua;
+        }
+        input.ng-dirty{
+          background-color:red;
+        }
+        input.ng-touched{
+          background-color:green;
+        }
+        input.ng-untouched{
+          background-color:blue;
+        }
+        input.ng-error{
+          background-color:yellow;
+        }
+  
+      </style>
+</head>
+<body ng-app="bmrApp" ng-controller="myCtrl">
+    <div>
+        <h2>BMI Calculator</h2>
+          <h3>Calculate your BMI</h3>
+        
+        <h3>Weight(Ibs):</h3>
+        <input  ng-model="weight"></input>
+        
+          <h3>Height(in):</h3>
+          <input  ng-model="height"></input>
+          
+          <button class="button-primary" ng-click="bmiCalc()">
+              your BMI is
+            </button>
+          <p ng-bind="bmi"></p>
+          
+         
+      <script>
+        var app = angular.module('bmrApp', []);
+  
+  app.controller('myCtrl', function ($scope){
+   $scope.height;
+   $scope.weight;
+   $scope.bmiCalc=function(){
+       $scope.bmi=$scope.weight/($scope.height*$scope.height);
+   }
+  });
+  </script>
+  
+  </body>
+  </html>
